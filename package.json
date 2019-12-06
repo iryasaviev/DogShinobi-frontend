@@ -1,0 +1,28 @@
+{
+  "name": "dogshinobi-frontend",
+  "version": "1.0.0",
+  "description": "Browser 2D game",
+  "main": "index.js",
+  "scripts": {
+    "dist": "webpack -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "github.com/deadcaton/dogshinobi-frontend"
+  },
+  "keywords": [
+    "dog",
+    "shinobi"
+  ],
+  "author": "deadcaton",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "webpack": "^4.41.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.7.5",
+    "@babel/preset-env": "^7.7.5",
+    "babel-loader": "^8.0.6",
+    "webpack-cli": "^3.3.10"
+  }
+}
