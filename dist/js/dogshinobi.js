@@ -93,7 +93,7 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("console.log('qwe');\n\n//# sourceURL=webpack:///./src/index.js?");
+eval("var config = {\n  type: Phaser.AUTO,\n  width: 800,\n  height: 600,\n  physics: {\n    \"default\": 'arcade',\n    arcade: {\n      gravity: {\n        y: 200\n      }\n    }\n  },\n  scene: {\n    preload: preload,\n    create: create\n  }\n};\nvar game = new Phaser.Game(config);\n\nfunction preload() {\n  this.load.setBaseURL('http://labs.phaser.io');\n  this.load.image('sky', 'assets/skies/space3.png');\n  this.load.image('logo', 'assets/sprites/phaser3-logo.png');\n  this.load.image('red', 'assets/particles/red.png');\n}\n\nfunction create() {\n  this.add.image(400, 300, 'sky');\n  var particles = this.add.particles('red');\n  var emitter = particles.createEmitter({\n    speed: 100,\n    scale: {\n      start: 1,\n      end: 0\n    },\n    blendMode: 'ADD'\n  });\n  var logo = this.physics.add.image(400, 100, 'logo');\n  logo.setVelocity(100, 200);\n  logo.setBounce(1, 1);\n  logo.setCollideWorldBounds(true);\n  emitter.startFollow(logo);\n}\n\n//# sourceURL=webpack:///./src/index.js?");
 
 /***/ })
 

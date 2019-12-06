@@ -4,7 +4,7 @@
   "description": "Browser 2D game",
   "main": "index.js",
   "scripts": {
-    "dist": "webpack -w"
+    "dist": "webpack-dev-server"
   },
   "repository": {
     "type": "git",
@@ -23,6 +23,7 @@
     "@babel/core": "^7.7.5",
     "@babel/preset-env": "^7.7.5",
     "babel-loader": "^8.0.6",
-    "webpack-cli": "^3.3.10"
+    "webpack-cli": "^3.3.10",
+    "webpack-dev-server": "^3.9.0"
   }
 }
