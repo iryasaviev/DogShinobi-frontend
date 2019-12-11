@@ -5,6 +5,13 @@ import { MainScene } from './scenes/main-scene';
 
 var config = new Config(new Screen().width, new Screen().height);
 
+config.physics = {
+    default: 'arcade',
+    arcade: {
+        gravity: { y: 300 },
+        debug: false
+    }
+};
 
 
 class Game extends Phaser.Game {
