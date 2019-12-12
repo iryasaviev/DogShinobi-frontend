@@ -14,6 +14,7 @@ export class LevelsScene extends Phaser.Scene {
         this.add.text(this.game.config.width - 135, this.game.config.height - 18, 'Created by ©Deadcaton', { fill: '#ddd', fontSize: 12, fontFamily: 'Helvetica' });
 
         this.createLevelsList();
+        this.createBackButton();
     }
 
     createLevelsList() {
@@ -33,10 +34,20 @@ export class LevelsScene extends Phaser.Scene {
         }
     }
 
+    createBackButton() {
+        let button = new Button(this),
+            backButton = button.create('link', 50, this.game.config.height - 50, '← Back', 24);
+
+        backButton[0].on('pointerup', () => this.transitionTo('Main', 'MainScene'));
+    }
+
     transitionTo(toScene, sceneClass) {
         switch (sceneClass) {
             case 'LevelOneScene':
                 this.scene.add(toScene, LevelOneScene);
+                break;
+            case 'Main':
+                this.scene.switch('Main');
                 break;
         }
 

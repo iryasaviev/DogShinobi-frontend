@@ -28,7 +28,9 @@ export class MainScene extends Phaser.Scene {
     }
 
     transitionFromButton(toScene) {
-        this.scene.add(toScene, LevelsScene);
+        if (this.game.scene.keys[toScene] === undefined) {
+            this.scene.add(toScene, LevelsScene);
+        }
         this.scene.start(toScene);
     }
 }

@@ -36,6 +36,15 @@ export class Button {
                 break;
 
             case 'link':
+                button = [
+                    this.scene.add.text(x, y, text, { fill: '#ddd', fontSize: size, fontFamily: 'Helvetica' })
+                ];
+
+                button[0].setInteractive()
+                    .on('pointerover', () => this.over('link', button[0]))
+                    .on('pointerout', () => this.out('link', button[0]))
+                    .on('pointerdown', () => this.down('link', button[0]))
+                    .on('pointerup', () => this.up('link', button[0]));
                 break;
         }
 
@@ -55,6 +64,7 @@ export class Button {
                 break;
 
             case 'link':
+                button.setStyle({ color: '#fff' });
                 break;
         }
     }
@@ -70,10 +80,12 @@ export class Button {
                 button[button.length - 2].x -= 2;
                 button[button.length - 1].x -= 3;
 
-                button[0].setStyle({ backgroundColor: '' })
+                button[0].setStyle({ backgroundColor: '' });
                 break;
 
             case 'link':
+                button.setStyle({ color: '#ddd' });
+                button.setStyle({ backgroundColor: '' });
                 break;
         }
     }
@@ -85,6 +97,7 @@ export class Button {
                 break;
 
             case 'link':
+                button.setStyle({ backgroundColor: 'rgba(47, 47, 47, 0.7)' });
                 break;
         }
     }
@@ -92,10 +105,11 @@ export class Button {
     up(type, button) {
         switch (type) {
             case 'button':
-                button[0].setStyle({ backgroundColor: '' })
+                button[0].setStyle({ backgroundColor: '' });
                 break;
 
             case 'link':
+                button.setStyle({ backgroundColor: '' });
                 break;
         }
     }
